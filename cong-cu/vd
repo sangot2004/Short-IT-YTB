@@ -1,0 +1,4 @@
+#!/bin/bash
+# Lệnh tắt: ./cong-cu/vd <lệnh> ...
+DIR="$(cd "$(dirname "$0")" && pwd)"
+exec "$DIR/.venv/bin/python" "$DIR/video.py" "$@"

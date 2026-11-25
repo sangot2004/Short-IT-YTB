@@ -1,0 +1,10 @@
+#!/bin/bash
+# Chạy nhanh: lấy tin hôm nay. Sau khi có kịch bản kich-ban/<ngày>.json thì dựng và gửi Telegram.
+cd "$(dirname "$0")"
+NGAY=$(date +%F)
+if [ ! -f "kich-ban/$NGAY.json" ]; then
+  .venv/bin/python lay_tin.py
+  echo "Đã lấy tin vào tin/$NGAY.md — giờ cần viết kich-ban/$NGAY.json rồi chạy lại lệnh này."
+  exit 0
+fi
+.venv/bin/python ban_tin.py dung "kich-ban/$NGAY.json" --gui

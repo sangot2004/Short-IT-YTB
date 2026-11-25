@@ -1,0 +1,112 @@
+{
+  "nhan": "Bản tin IT · 25/11/2026",
+  "canh": [
+    {
+      "loi": "Microsoft sập hơn một ngày, mã độc giả danh công cụ AI, và giá máy chủ tăng vọt. Đây là 4 tin IT đáng chú ý hôm nay.",
+      "the": {
+        "loai": "tieu_de",
+        "tren": "Hôm nay 25/11",
+        "chinh": "4 tin IT dân kỹ thuật cần biết",
+        "duoi": "Hạ tầng · Bảo mật · Data center"
+      }
+    },
+    {
+      "loi": "Một. Microsoft gặp sự cố kéo dài hơn 24 giờ tại 74 quốc gia và vùng lãnh thổ, với hơn 7,4 triệu lượt báo cáo.",
+      "the": {
+        "loai": "so_lon",
+        "so": "7,4 triệu",
+        "mau": "do",
+        "nhan": "lượt báo cáo sự cố Microsoft",
+        "phu": "74 quốc gia · hơn 24 giờ"
+      }
+    },
+    {
+      "loi": "Outlook, Teams và Copilot đều gián đoạn. Microsoft đã xin lỗi và bật chiến dịch nội bộ Code Red, tức báo động đỏ.",
+      "the": {
+        "loai": "bang",
+        "tieu_de": "DỊCH VỤ BỊ ẢNH HƯỞNG",
+        "cot": [
+          "Dịch vụ",
+          "Trạng thái"
+        ],
+        "dong": [
+          [
+            "Outlook",
+            "Gián đoạn",
+            "do"
+          ],
+          [
+            "Teams",
+            "Gián đoạn",
+            "do"
+          ],
+          [
+            "Copilot",
+            "Gián đoạn",
+            "do"
+          ]
+        ],
+        "ghi_chu": "Microsoft bật \"Code Red\" nội bộ sau sự cố"
+      }
+    },
+    {
+      "loi": "Hai. Mã độc giả danh công cụ AI Ollama đang xâm nhập máy Windows và tắt phần mềm diệt virus. Chỉ tải phần mềm từ trang chính thức nhé.",
+      "the": {
+        "loai": "su_co",
+        "ten": "Mã độc giả danh Ollama",
+        "ngay": "Windows · phát hiện 25/11",
+        "trang_thai": "Nguy hiểm",
+        "mau": "do",
+        "chi_tiet": "Vô hiệu hóa chức năng bảo vệ của phần mềm diệt virus"
+      }
+    },
+    {
+      "loi": "Ba. Máy chủ AI tăng giá đến 45%, kể cả với khách đã ký hợp đồng, vì thiếu hụt chip nhớ DRAM.",
+      "the": {
+        "loai": "so_lon",
+        "so": "45%",
+        "mau": "vang",
+        "nhan": "Máy chủ AI tăng giá",
+        "phu": "Nguyên nhân: thiếu hụt DRAM"
+      }
+    },
+    {
+      "loi": "Bốn. TP HCM cho CMC thuê hơn 3 héc ta để xây trung tâm dữ liệu siêu quy mô, miễn tiền thuê đất suốt 50 năm.",
+      "the": {
+        "loai": "tin",
+        "nguon": "Việt Nam",
+        "tieu_de": "TP HCM miễn tiền thuê đất 50 năm cho trung tâm dữ liệu",
+        "y": [
+          "CMC thuê hơn 3 ha tại Khu Công nghệ cao",
+          "Trung tâm dữ liệu siêu quy mô"
+        ]
+      }
+    },
+    {
+      "loi": "Bài học cho dân kỹ thuật: hệ thống lớn cỡ nào cũng có thể sập, nên luôn cần phương án dự phòng. Follow để xem tin IT mỗi ngày nhé.",
+      "the": {
+        "loai": "ket",
+        "chinh": "Hệ thống nào cũng có thể sập",
+        "phu": "Luôn cần phương án dự phòng"
+      }
+    }
+  ],
+  "nguon": [
+    "Tuổi Trẻ: Microsoft xin lỗi sau sự cố dịch vụ tại 74 quốc gia",
+    "VnExpress: Microsoft bật 'báo động đỏ' sau sự cố sập hệ thống",
+    "Tuổi Trẻ: Phát hiện mã độc núp bóng AI, vô hiệu hóa hàng loạt phần mềm bảo mật",
+    "VnExpress: Máy chủ AI tăng giá đến 45% dù đã ký hợp đồng",
+    "VnExpress: TP HCM miễn tiền thuê đất 50 năm cho nhà đầu tư trung tâm dữ liệu"
+  ],
+  "dang": {
+    "tieu_de": "Microsoft sập hơn 24 giờ, mã độc giả danh AI | Tin IT 25/11",
+    "mo_ta": "4 tin IT đáng chú ý hôm nay: sự cố Microsoft tại 74 quốc gia, mã độc giả danh Ollama, máy chủ AI tăng giá 45%, TP HCM ưu đãi trung tâm dữ liệu.\nNguồn: Tuổi Trẻ, VnExpress.\nGiọng đọc AI: VieNeu-TTS.",
+    "hashtag": [
+      "#tinIT",
+      "#congnghe",
+      "#microsoft",
+      "#baomat",
+      "#shorts"
+    ]
+  }
+}

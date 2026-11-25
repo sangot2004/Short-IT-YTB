@@ -1,0 +1,4 @@
+#!/bin/bash
+# Kiểm tra file giọng đọc: ./cong-cu/kiem-tra-giong <dự án>
+DIR="$(cd "$(dirname "$0")" && pwd)"
+exec "$DIR/.venv/bin/python" "$DIR/kiem_tra_giong.py" "$@"

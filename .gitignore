@@ -1,0 +1,22 @@
+# Bí mật — KHÔNG đẩy lên GitHub
+.env
+*.env
+!.env.example
+
+# Môi trường Python
+.venv/
+__pycache__/
+*.pyc
+
+# File tạm, âm thanh, video, ảnh dựng ra
+cong-cu/shorts/tam/
+cong-cu/shorts/xuat/
+cong-cu/shorts/thu/*.wav
+cong-cu/shorts/tin/
+du-an/
+*.mp4
+*.wav
+*.mp3
+*.log
+
+.DS_Store

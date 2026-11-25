@@ -1,0 +1,84 @@
+{
+  "nhan": "Bản tin IT · 25/11/2026",
+  "canh": [
+    {
+      "loi": "Cơ quan chống tội phạm tài chính Mỹ bị xâm nhập, máy chủ bảo mật Check Point bị tấn công, và laptop có thể quay về RAM 8GB. Đây là 4 tin IT hôm nay.",
+      "the": {
+        "loai": "tieu_de",
+        "tren": "Hôm nay 25/11",
+        "chinh": "4 tin IT dân kỹ thuật cần biết",
+        "duoi": "Bảo mật · Hạ tầng · Phần cứng"
+      },
+      "doc": "Cơ quan chống tội phạm tài chính Mỹ bị xâm nhập, máy chủ bảo mật Check Point bị tấn công, và laptop có thể quay về RAM 8 gi ga bai. Đây là 4 tin IT hôm nay."
+    },
+    {
+      "loi": "Một. FinCEN, cơ quan chống tội phạm tài chính thuộc Bộ Tài chính Mỹ, xác nhận có truy cập trái phép vào một phần nhỏ hệ thống của họ.",
+      "the": {
+        "loai": "su_co",
+        "ten": "FinCEN bị xâm nhập",
+        "ngay": "Bộ Tài chính Mỹ · 25/11",
+        "trang_thai": "Đang điều tra",
+        "mau": "do",
+        "chi_tiet": "Truy cập trái phép vào một phần nhỏ hệ thống"
+      }
+    },
+    {
+      "loi": "Hai. Có chiến dịch xâm nhập đang diễn ra nhắm vào máy chủ quản lý bảo mật của Check Point, theo cảnh báo từ GreyNoise.",
+      "the": {
+        "loai": "su_co",
+        "ten": "Tấn công máy chủ Check Point",
+        "ngay": "Theo GreyNoise",
+        "trang_thai": "Đang diễn ra",
+        "mau": "vang",
+        "chi_tiet": "Nhắm vào máy chủ quản lý bảo mật"
+      }
+    },
+    {
+      "loi": "Ba. Cơ quan an ninh mạng của Anh cảnh báo: công cụ hack dùng AI đang khai thác những lỗ hổng đơn giản, tồn tại từ nhiều năm.",
+      "the": {
+        "loai": "tin",
+        "nguon": "Anh",
+        "tieu_de": "AI khiến lỗ hổng cũ bị lộ rõ hơn",
+        "y": [
+          "Công cụ hack AI khai thác lỗi bảo mật đơn giản",
+          "Nền tảng vững chắc chưa bao giờ quan trọng hơn"
+        ]
+      }
+    },
+    {
+      "loi": "Bốn. Giá bộ nhớ tăng khiến ASUS cân nhắc đưa laptop phổ thông và tầm trung trở lại cấu hình RAM 8GB.",
+      "doc": "Bốn. Giá bộ nhớ tăng khiến ASUS cân nhắc đưa laptop phổ thông và tầm trung trở lại cấu hình RAM 8 gi ga bai.",
+      "the": {
+        "loai": "so_lon",
+        "so": "8GB",
+        "mau": "vang",
+        "nhan": "RAM laptop có thể quay lại mức thấp",
+        "phu": "Nguyên nhân: giá bộ nhớ tăng"
+      }
+    },
+    {
+      "loi": "Bài học cho dân kỹ thuật: tin tặc có AI vẫn thích lỗi cũ, nên vá lỗi và cập nhật đều đặn là việc quan trọng nhất. Follow để xem tin IT mỗi ngày nhé.",
+      "the": {
+        "loai": "ket",
+        "chinh": "Vá lỗi đều đặn là nền móng",
+        "phu": "AI mạnh đến đâu vẫn bắt đầu từ lỗi cũ"
+      }
+    }
+  ],
+  "nguon": [
+    "The Verge: US financial crimes bureau discloses 'cybersecurity incident'",
+    "Hacker News / GreyNoise: Active intrusion campaign against Check Point security management servers",
+    "TechCrunch: UK warns AI-driven cyberattacks are exposing years of weak security",
+    "GenK: RAM 8GB sắp phổ biến trở lại trên laptop, 16GB dần thành xa xỉ vì giá bộ nhớ tăng cao"
+  ],
+  "dang": {
+    "tieu_de": "FinCEN bị xâm nhập, tấn công máy chủ Check Point | Tin IT 25/11",
+    "mo_ta": "4 tin IT hôm nay: sự cố an ninh mạng tại FinCEN, chiến dịch tấn công máy chủ Check Point, cảnh báo của Anh về tấn công dùng AI, laptop có thể quay lại RAM 8GB.\nNguồn: The Verge, GreyNoise, TechCrunch, GenK.\nGiọng đọc AI: VieNeu-TTS.",
+    "hashtag": [
+      "#tinIT",
+      "#congnghe",
+      "#baomat",
+      "#shorts"
+    ]
+  }
+}

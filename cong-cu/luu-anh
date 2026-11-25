@@ -1,0 +1,56 @@
+#!/bin/bash
+# Lưu ảnh Gemini vừa tải về vào đúng thư mục dự án với đúng tên.
+#
+# Cách dùng:
+#   ./cong-cu/luu-anh <dự án> <thư mục> <tên> [--lat]
+#
+# Ví dụ:
+#   ./cong-cu/luu-anh 01-ten-video tham-chieu nv-nhan-vat
+#   ./cong-cu/luu-anh 01-ten-video anh canh-03-1
+#   ./cong-cu/luu-anh 01-ten-video tham-chieu nv-nhan-vat --lat   (lật ngang ảnh)
+#
+# <thư mục> là: tham-chieu (ảnh nhân vật, ảnh nguồn clip) hoặc anh (ảnh đưa vào video)
+# <tên> không cần ghi đuôi .png
+set -e
+if [ $# -lt 3 ]; then
+  sed -n '2,14p' "$0" | sed 's/^# \{0,1\}//'
+  exit 1
+fi
+
+ROOT="$(cd "$(dirname "$0")/.." && pwd)"
+DL="${DOWNLOADS:-$HOME/Downloads}"
+DU_AN="$1"; THU_MUC="$2"; TEN="${3%.png}"; LAT="$4"
+
+case "$THU_MUC" in
+  tham-chieu|anh|xuat) ;;
+  *) echo "❌ Thư mục phải là: tham-chieu, anh hoặc xuat"; exit 1 ;;
+esac
+
+DICH_DIR="$ROOT/du-an/$DU_AN/$THU_MUC"
+[ -d "$ROOT/du-an/$DU_AN" ] || { echo "❌ Không thấy dự án: $ROOT/du-an/$DU_AN"; exit 1; }
+mkdir -p "$DICH_DIR"
+
+# ảnh Gemini mới nhất trong Downloads
+NGUON="$(ls -t "$DL"/Gemini_Generated_Image_*.png 2>/dev/null | head -1)"
+[ -n "$NGUON" ] || { echo "❌ Không thấy ảnh Gemini_Generated_Image_*.png trong $DL"; echo "   Có thể ảnh chưa tải xong, đợi vài giây rồi chạy lại."; exit 1; }
+
+# ảnh quá mới có thể đang tải dở (file .Q6L... tạm thì ls không thấy, nhưng kiểm tra thêm)
+sleep 1
+if [ "$(find "$DL" -maxdepth 1 -name '.*claudefordesktop*' | wc -l)" -gt 0 ]; then
+  echo "⏳ Vẫn đang có file tải dở trong Downloads, đợi vài giây rồi chạy lại."; exit 1
+fi
+
+DICH="$DICH_DIR/$TEN.png"
+if [ -e "$DICH" ]; then
+  mv "$DICH" "$DICH_DIR/$TEN-cu-$(date +%H%M%S).png"
+  echo "ℹ️  Đã có file cùng tên, đã đổi tên bản cũ thành $TEN-cu-....png"
+fi
+
+if [ "$LAT" = "--lat" ]; then
+  ffmpeg -loglevel error -y -i "$NGUON" -vf hflip "$DICH"
+  echo "↔️  Đã lật ngang ảnh"
+else
+  cp "$NGUON" "$DICH"
+fi
+mv "$NGUON" "$HOME/.Trash/" 2>/dev/null || true
+echo "✅ Đã lưu: $DICH"

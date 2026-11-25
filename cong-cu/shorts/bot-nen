@@ -1,0 +1,45 @@
+#!/bin/bash
+# Bật/tắt bot Telegram chạy nền (tự chạy lại khi khởi động máy hoặc khi bị lỗi).
+#   ./bot-nen bat        bật
+#   ./bot-nen tat        tắt hẳn
+#   ./bot-nen xem        xem trạng thái + 20 dòng nhật ký cuối
+cd "$(dirname "$0")"
+GOC="$(pwd)"
+NHAN="com.bantinit.bot"
+PLIST="$HOME/Library/LaunchAgents/$NHAN.plist"
+NODE_BIN="$(dirname "$(command -v claude || ls -d "$HOME"/.nvm/versions/node/*/bin/claude | tail -1)")"
+case "$1" in
+  bat)
+    mkdir -p tam "$HOME/Library/LaunchAgents"
+    cat > "$PLIST" <<PL
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0"><dict>
+  <key>Label</key><string>$NHAN</string>
+  <key>ProgramArguments</key><array>
+    <string>$GOC/.venv/bin/python</string><string>$GOC/bot.py</string>
+  </array>
+  <key>WorkingDirectory</key><string>$GOC</string>
+  <key>EnvironmentVariables</key><dict>
+    <key>PATH</key><string>$NODE_BIN:/opt/homebrew/bin:/usr/local/bin:/usr/bin:/bin</string>
+    <key>PYTHONUNBUFFERED</key><string>1</string>
+  </dict>
+  <key>RunAtLoad</key><true/>
+  <key>KeepAlive</key><true/>
+  <key>ThrottleInterval</key><integer>30</integer>
+  <key>StandardOutPath</key><string>$GOC/tam/bot-nen.log</string>
+  <key>StandardErrorPath</key><string>$GOC/tam/bot-nen.log</string>
+</dict></plist>
+PL
+    launchctl bootout "gui/$(id -u)/$NHAN" 2>/dev/null && sleep 2
+    launchctl bootstrap "gui/$(id -u)" "$PLIST" && echo "Đã bật bot. Gõ /help trên Telegram để thử."
+    ;;
+  tat)
+    launchctl bootout "gui/$(id -u)/$NHAN" 2>/dev/null
+    rm -f "$PLIST" && echo "Đã tắt bot."
+    ;;
+  *)
+    launchctl print "gui/$(id -u)/$NHAN" 2>/dev/null | grep -E "state =|pid =" || echo "Bot đang tắt."
+    tail -20 tam/bot.log 2>/dev/null
+    ;;
+esac
