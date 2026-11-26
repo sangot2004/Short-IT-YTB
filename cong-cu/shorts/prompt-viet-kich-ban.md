@@ -8,6 +8,7 @@ Ghi kịch bản vào: {RA}
 Quy tắc:
 - Chọn 3–4 tin IT/công nghệ đáng chú ý nhất cho dân kỹ thuật: hạ tầng, bảo mật, AI, dữ liệu, sự cố lớn, tin công nghệ Việt Nam. Bỏ tin bê bối đời tư, chính trị, khuyến mãi, quảng cáo sản phẩm, game giải trí thuần túy.
 - Không lặp chủ đề chính đã có trong các file kich-ban/*.json khác của 3 ngày gần nhất (đọc chúng để kiểm tra).
+- Tiêu đề và câu hook: mỗi con số phải đi đúng với tin của nó. KHÔNG ghép số liệu của tin này vào tên công ty/sự kiện của tin khác (ví dụ sai: "1Password bị xâm nhập, dữ liệu 21 triệu tài khoản" khi 21 triệu là của Character.AI).
 - CHỈ dùng dữ kiện và con số có trong tiêu đề/tóm tắt tin. Không bịa, không đoán, không thêm số liệu ngoài nguồn. Không chắc thì viết chung chung hơn.
 - 5–7 cảnh, tổng lời đọc 130–160 chữ (video khoảng 55–60 giây). Cảnh đầu loại "tieu_de" (hook gây tò mò), mỗi tin 1–2 cảnh với thẻ phù hợp ("so_lon" cho con số ấn tượng, "su_co" cho sự cố/lỗ hổng, "bang" cho danh sách, "tin" cho tin thường), cảnh cuối loại "ket" với MỘT câu nhận xét/bài học riêng cho dân kỹ thuật rồi "Follow để xem tin IT mỗi ngày nhé."
 - Văn nói tự nhiên, câu ngắn. Không dùng emoji trên thẻ. Chữ trên thẻ ngắn gọn.
