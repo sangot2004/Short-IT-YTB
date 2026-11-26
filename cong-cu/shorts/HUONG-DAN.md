@@ -103,6 +103,7 @@ Bot chạy nền trên Mac (tự bật lại khi khởi động máy). Chỉ cha
 | `/sua <yêu cầu>` | Claude sửa kịch bản hôm nay theo yêu cầu (ví dụ `/sua bỏ tin số 3, hook giật gân hơn`), dựng và gửi lại. |
 | `/tin` | Gửi 15 tiêu đề tin IT mới nhất. |
 | `/giong [tên]` | Xem hoặc đổi giọng đọc (ví dụ `/giong Mai Anh`). |
+| `/dang [HH:MM]` | Tải video hôm nay lên YouTube, hẹn công khai 19:30 (hoặc giờ ghi kèm). Xem mục 8. |
 | `/trang_thai` | Bot đang làm gì, hôm nay đã có video chưa. |
 
 - Claude được gọi qua lệnh `claude` (model Sonnet, đổi bằng `"model_claude"` trong `cau-hinh.json`). Nó chỉ được đọc file và ghi vào `kich-ban/`, không được chạy lệnh hay lên mạng.
@@ -116,3 +117,33 @@ Bật/tắt bot:
 ./bot-nen tat     # tắt hẳn
 ./bot-nen xem     # trạng thái + nhật ký (tam/bot.log)
 ```
+
+## 8. Đăng thẳng lên YouTube bằng `/dang`
+
+`/dang` dùng YouTube Data API (`dang_ytb.py`): tải video hôm nay lên kênh ở chế độ Riêng tư, hẹn công khai lúc 19:30 giờ VN (đổi mặc định bằng `"gio_dang"` trong `cau-hinh.json`, hoặc gõ `/dang 20:00`). Nếu lúc gõ lệnh đã qua giờ hẹn, video được hẹn 15 phút sau. Muốn huỷ: YouTube Studio → Nội dung → Shorts → đổi về Riêng tư hoặc xoá.
+
+- Bot không tải trùng: video đã đăng được ghi vào `xuat/<ngày>-ytb.json`. `/dang lai` để tải thêm bản nữa.
+- Tự khai báo sẵn: không dành cho trẻ em, có dùng AI (giọng đọc), tiếng Việt, danh mục Khoa học và công nghệ.
+- Hạn mức API miễn phí 10.000 đơn vị/ngày, mỗi lần tải lên tốn khoảng 1.600, đủ cho vài video/ngày.
+
+### Quan trọng: Google phải duyệt project trước
+
+Video tải lên từ project Google Cloud **chưa qua audit** của YouTube bị **khoá ở chế độ Riêng tư** (không công khai được, kể cả đổi tay). Vì vậy `/dang` sẽ từ chối cho đến khi bạn đặt `"ytb_api_da_duyet": true` trong `cau-hinh.json`. Trong lúc chờ, `/dang thu` tải lên Riêng tư để kiểm tra đường đi (xoá video thử sau đó), còn đăng thật thì nhờ Claude qua chat.
+
+### Cài đặt một lần (khoảng 15 phút, dùng tài khoản Google có kênh Bản Tin IT — Chrome profile Thịnh)
+
+**Trạng thái (26/11/2026):** bước 1–3 và 5 đã xong. Project `ban-tin-it` thuộc tài khoản Google của kênh (Nguyễn Thịnh). YouTube Data API v3 đã bật. Màn hình đồng ý ở chế độ **Thử nghiệm**, với chính tài khoản đó là người dùng thử. OAuth client `ban-tin-it-bot` (Desktop) đã lưu thành `google-oauth.json`. Vì còn ở chế độ Thử nghiệm, phiên đăng nhập hết hạn sau 7 ngày: khi bot báo "hết hạn", chạy lại `dang_ytb.py dang-nhap`. Muốn chuyển sang In production, Google yêu cầu trang chủ và link chính sách bảo mật công khai trên trang *Branding*.
+
+1. Vào https://console.cloud.google.com → tạo project mới, ví dụ `ban-tin-it`.
+2. **APIs & Services → Library** → tìm **YouTube Data API v3** → **Enable**.
+3. **Google Auth Platform** (OAuth consent screen) → **Get started**: tên app `Ban Tin IT uploader`, email hỗ trợ là Gmail của bạn, chọn **External**.
+4. Mục **Audience** → **Publish app** (chuyển sang *In production*). Nếu để *Testing*, phiên đăng nhập tự hết hạn sau 7 ngày. App chưa được Google xác minh vẫn dùng được cho chính bạn (lúc đăng nhập bấm *Advanced → Go to … (unsafe)*, vì đây là app của bạn).
+5. Mục **Clients** → **Create client** → loại **Desktop app** → tạo → **Download JSON**. Đổi tên file thành `google-oauth.json` và đặt vào thư mục `cong-cu/shorts/`. File này là bí mật, đã nằm trong `.gitignore`.
+6. Đăng nhập một lần trên Mac:
+   ```bash
+   .venv/bin/python dang_ytb.py dang-nhap
+   ```
+   Trình duyệt mở ra → chọn đúng tài khoản và **chọn kênh Bản Tin IT** nếu được hỏi → cho phép. Lệnh in ra tên kênh để bạn kiểm tra. Phiên đăng nhập lưu ở `.ytb-token.json`.
+7. Thử: gõ `/dang thu` trên Telegram → video Riêng tư xuất hiện trong Studio → xoá đi.
+8. Xin duyệt: điền form **YouTube API Services – Audit and Quota Extension** tại https://support.google.com/youtube/contact/yt_api_form. Mô tả thật: công cụ cá nhân, chỉ tải video do chính mình làm lên kênh của mình, mỗi ngày 1 Short, không thu thập dữ liệu người khác. Google trả lời qua email, thường mất vài tuần.
+9. Khi được duyệt: thêm `"ytb_api_da_duyet": true` vào `cau-hinh.json`. Từ đó `/dang` đăng thật.

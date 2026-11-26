@@ -20,3 +20,8 @@ du-an/
 *.log
 
 .DS_Store
+
+# Google OAuth (client secret + token YouTube)
+google-oauth.json
+client_secret*.json
+.ytb-token.json

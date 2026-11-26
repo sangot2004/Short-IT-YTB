@@ -11,7 +11,7 @@
 ```bash
 cd cong-cu/shorts
 python3.12 -m venv .venv
-.venv/bin/pip install vieneu feedparser pillow requests fonttools
+.venv/bin/pip install vieneu feedparser pillow requests fonttools google-api-python-client google-auth-oauthlib
 cp .env.example .env   # rồi điền TELEGRAM_BOT_TOKEN, TELEGRAM_CHAT_ID
 ```
 

@@ -36,6 +36,7 @@ LENH = [
     ("sua", "Sửa kịch bản hôm nay: /sua <yêu cầu>"),
     ("tin", "Xem 15 tin IT mới nhất"),
     ("giong", "Xem/đổi giọng đọc: /giong Mai Anh"),
+    ("dang", "Tải video hôm nay lên YouTube, hẹn công khai 19:30 (/dang 20:00 để đổi giờ)"),
     ("trang_thai", "Bot đang làm gì"),
     ("help", "Danh sách lệnh"),
 ]
@@ -235,6 +236,32 @@ def lenh_trang_thai():
     nhan(f"{dang}\nKịch bản hôm nay: {'có' if p.exists() else 'chưa'}\nVideo hôm nay: {'có' if v.exists() else 'chưa'}")
 
 
+def lenh_dang(doi: str):
+    """/dang [HH:MM] [thu] [lai] — tải video hôm nay lên YouTube và hẹn giờ công khai."""
+    import dang_ytb
+
+    p = file_kb()
+    if not p.exists() or not (GOC / "xuat" / f"{p.stem}.mp4").exists():
+        nhan("Hôm nay chưa có video. Gõ /lam trước nhé.")
+        return
+    tu = doi.lower().split()
+    gio = next((t for t in tu if re.fullmatch(r"\d{1,2}:\d{2}", t)), None)
+    thu, lai = "thu" in tu, "lai" in tu
+    nhan("⬆️ Đang tải video lên YouTube…")
+    try:
+        kq = dang_ytb.dang(p, gio=gio, thu=thu, lai=lai)
+    except dang_ytb.LoiDang as e:
+        nhan(f"⚠️ {e}")
+        return
+    if kq["cong_khai_luc"]:
+        luc = datetime.fromisoformat(kq["cong_khai_luc"])
+        nhan(f"✅ Đã tải lên và hẹn công khai lúc {luc:%H:%M %d/%m}.\n{kq['link']}\n"
+             "Muốn huỷ thì vào YouTube Studio → Nội dung → Shorts, đổi về Riêng tư hoặc xoá.")
+    else:
+        nhan(f"✅ Đã tải lên ở chế độ Riêng tư (chế độ thử, project API chưa được duyệt nên video bị khoá Riêng tư).\n"
+             f"{kq['link']}\nKiểm tra xong thì xoá video thử trong YouTube Studio.")
+
+
 def lenh_help():
     nhan("Các lệnh:\n" + "\n".join(f"/{l} — {m}" for l, m in LENH))
 
@@ -276,6 +303,8 @@ def xu_ly(text: str):
         chay_nen("lấy tin", lenh_tin)
     elif lenh == "giong":
         lenh_giong(doi)
+    elif lenh == "dang":
+        chay_nen("đăng lên YouTube", lenh_dang, doi)
     elif lenh == "trang_thai":
         lenh_trang_thai()
     else:
