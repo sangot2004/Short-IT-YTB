@@ -1,0 +1,90 @@
+{
+  "nhan": "Bản tin IT · 26/11/2026",
+  "canh": [
+    {
+      "loi": "1Password bị xâm nhập, dữ liệu chat AI có nguy cơ bị đấu giá. Đây là 4 tin IT hôm nay.",
+      "doc": "Oăn Pát-quớt bị xâm nhập, dữ liệu chat AI có nguy cơ bị đấu giá. Đây là 4 tin ai ti hôm nay.",
+      "the": {
+        "loai": "tieu_de",
+        "tren": "Hôm nay 26/11",
+        "chinh": "4 tin IT dân kỹ thuật cần biết",
+        "duoi": "Bảo mật · Dữ liệu · Hạ tầng"
+      }
+    },
+    {
+      "loi": "Một. 1Password cho biết tin tặc vào được tài khoản công ty của một nhân viên, lấy tên và email khách hàng. Mật khẩu không bị lộ.",
+      "doc": "Một. Oăn Pát-quớt cho biết tin tặc vào được tài khoản công ty của một nhân viên, lấy tên và i meo khách hàng. Mật khẩu không bị lộ.",
+      "the": {
+        "loai": "su_co",
+        "ten": "1Password bị xâm nhập",
+        "ngay": "Công bố tháng 11/2026",
+        "trang_thai": "Lộ dữ liệu",
+        "mau": "do",
+        "chi_tiet": "Lộ tên, email khách hàng. Mật khẩu an toàn, cần đề phòng lừa đảo"
+      }
+    },
+    {
+      "loi": "Hai. Các tổng chưởng lý bang tại Mỹ phản đối Character AI đấu giá dữ liệu khi phá sản, liên quan hơn 21 triệu tài khoản.",
+      "doc": "Hai. Các tổng chưởng lý bang tại Mỹ phản đối Character AI đấu giá dữ liệu khi phá sản, liên quan hơn 21 triệu tài khoản.",
+      "the": {
+        "loai": "so_lon",
+        "so": "21",
+        "mau": "vang",
+        "nhan": "triệu tài khoản Mỹ trong dữ liệu Character.AI",
+        "phu": "Gồm 2,1 triệu của trẻ vị thành niên"
+      }
+    },
+    {
+      "loi": "Ba. Mỹ cho phép SpaceX triển khai tới 1 triệu vệ tinh gắn chip AI, hướng đến trung tâm dữ liệu trong không gian.",
+      "doc": "Ba. Mỹ cho phép SpaceX triển khai tới 1 triệu vệ tinh gắn chip AI, hướng đến trung tâm dữ liệu trong không gian.",
+      "the": {
+        "loai": "tin",
+        "nguon": "Mỹ",
+        "tieu_de": "SpaceX được đưa trung tâm dữ liệu AI lên vũ trụ",
+        "y": [
+          "FCC cấp phép tới 1 triệu vệ tinh",
+          "Vệ tinh được trang bị chip AI"
+        ]
+      }
+    },
+    {
+      "loi": "Bốn. Verichains của Việt Nam được Binance chọn cùng Mandiant và SlowMist đánh giá hệ thống sau vụ hack tỷ đô.",
+      "the": {
+        "loai": "tin",
+        "nguon": "Việt Nam",
+        "tieu_de": "Kỹ sư Việt được Binance chọn đánh giá bảo mật",
+        "y": [
+          "Verichains cùng Mandiant (Google) và SlowMist",
+          "Sau vụ hack thiệt hại hàng tỷ USD"
+        ]
+      }
+    },
+    {
+      "loi": "Bài học: một tài khoản nhân viên cũng có thể mở đường vào hệ thống. Hãy bật xác thực hai lớp và cấp quyền tối thiểu. Follow để xem tin mỗi ngày.",
+      "the": {
+        "loai": "ket",
+        "chinh": "Bảo vệ từng tài khoản nội bộ",
+        "phu": "Xác thực hai lớp · Quyền tối thiểu"
+      }
+    }
+  ],
+  "nguon": [
+    "TechCrunch: 1Password said hackers broke into its internal systems, but customer passwords are safe",
+    "The Verge: 1Password breach leaked customer names and emails, but not passwords",
+    "TechCrunch: Character.AI’s plan to auction off users’ private chats challenged by state AGs",
+    "TechCrunch: FCC approves SpaceX plan to put AI data centers in space",
+    "The Verge: FCC signs off on SpaceX’s plan to put up to 1 million data center satellites into space",
+    "VnExpress: Nhóm kỹ sư Việt được Binance chọn đánh giá bảo mật sau vụ hack tỷ USD"
+  ],
+  "dang": {
+    "tieu_de": "1Password bị xâm nhập, dữ liệu 21 triệu tài khoản AI | Tin IT 26/11",
+    "mo_ta": "4 tin IT hôm nay: sự cố bảo mật tại 1Password, kế hoạch đấu giá dữ liệu của Character.AI bị phản đối, SpaceX được phép đưa trung tâm dữ liệu AI lên không gian, Verichains được Binance chọn đánh giá bảo mật.\nNguồn: TechCrunch, The Verge, VnExpress.\nGiọng đọc AI: VieNeu-TTS.",
+    "hashtag": [
+      "#tinIT",
+      "#congnghe",
+      "#baomat",
+      "#dulieu",
+      "#shorts"
+    ]
+  }
+}

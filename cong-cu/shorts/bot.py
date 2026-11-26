@@ -48,6 +48,7 @@ _viec_hien_tai = {"ten": None, "tu": None}
 def ghi_log(*a):
     NHAT_KY.parent.mkdir(exist_ok=True)
     dong = f"{datetime.now():%Y-%m-%d %H:%M:%S} " + " ".join(str(x) for x in a)
+    dong = re.sub(r"bot\d+:[\w-]+", "bot<token>", dong)  # không ghi token vào nhật ký
     print(dong, flush=True)
     with open(NHAT_KY, "a", encoding="utf-8") as f:
         f.write(dong + "\n")
